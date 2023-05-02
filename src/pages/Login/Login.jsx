@@ -1,14 +1,26 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Login = () => {
-    
-    const handleLogin =event =>{
+
+    const { signIn } = useContext(AuthContext);
+
+    const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+
+        signIn(email, password)
+        .then(result=>{
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error=>{
+            console.error(error);
+        })
     }
 
     return (
@@ -25,16 +37,16 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" required/>
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type="password" name='password' placeholder="password" className="input input-bordered" required/>
+                                <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                                 <label className="label">
-                                    New To Italian Foodies ? 
-                                    <Link  to="/register" className="text-xl font-bold text-purple-500">Please Register</Link>
+                                    New To Italian Foodies ?
+                                    <Link to="/register" className="text-xl font-bold text-purple-500">Please Register</Link>
                                 </label>
                             </div>
                             <div className="form-control mt-6">
