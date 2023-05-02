@@ -7,6 +7,7 @@ const LoginLayouts = () => {
         <div>
             <Header></Header>
             <Outlet></Outlet>
+
         </div>
     );
 };
