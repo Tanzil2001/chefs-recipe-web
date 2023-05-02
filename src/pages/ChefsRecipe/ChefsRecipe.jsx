@@ -1,9 +1,22 @@
 import React from 'react';
+import { useLoaderData } from 'react-router-dom';
 
 const ChefsRecipe = () => {
+    const chefData = useLoaderData();
+    const { chef_name, chef_picture, likes, num_recipes, short_bio, years_of_experience, recipes } = chefData;
     return (
-        <div>
-            
+        <div className='container mx-auto'>
+            <div className="card lg:card-side bg-base-100 shadow-xl">
+                <figure><img src={chef_picture} alt="Album" /></figure>
+                <div className="card-body">
+                    <h2 className="card-title">Name: {chef_name}</h2>
+                    <p className=''>Bio: {short_bio}</p>
+                    <p>Number of Recipis :{num_recipes}</p>
+                    <p>Years of Experience :{years_of_experience}</p>
+                    <p>Likes :{likes}</p>
+                    
+                </div>
+            </div>
         </div>
     );
 };

@@ -6,6 +6,7 @@ import Blog from '../pages/Blog';
 import LoginLayouts from '../Layouts/LoginLayouts';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
+import ChefsRecipe from '../pages/ChefsRecipe/ChefsRecipe';
 
 const router = createBrowserRouter([
     {
@@ -20,6 +21,11 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '/chefs/:id',
+                element: <ChefsRecipe></ChefsRecipe>,
+                loader: ({params})=>fetch(`https://assignment-10-server-tanzil2001.vercel.app/chefs/${params.id}`)
             }
         ]
     },
