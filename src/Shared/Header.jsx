@@ -3,7 +3,17 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, LogOut } = useContext(AuthContext);
+
+    const handleLogOut =()=>{
+        LogOut()
+        .then(result =>{
+
+        })
+        .catch(error=>{
+            console.log(error);
+        })
+    }
     return (
         <>
             <div className='flex justify-between items-center  container mx-auto px-5'>
@@ -18,7 +28,7 @@ const Header = () => {
                 <div className='flex gap-3 items-center'>
                     {
                         user ? <><p>{user.name}</p>
-                            <Link><button className='btn btn-primary'>Log Out</button></Link></> : <>
+                            <Link><button onClick={handleLogOut} className='btn btn-primary'>Log Out</button></Link></> : <>
                             <Link to="/login"><button className='btn btn-primary'>Log In</button></Link></>
                     }
                 </div>
