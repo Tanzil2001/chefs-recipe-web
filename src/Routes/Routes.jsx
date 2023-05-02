@@ -7,6 +7,7 @@ import LoginLayouts from '../Layouts/LoginLayouts';
 import Login from '../pages/Login/Login';
 import Register from '../pages/Register/Register';
 import ChefsRecipe from '../pages/ChefsRecipe/ChefsRecipe';
+import PrivetRout from './PrivetRout';
 
 const router = createBrowserRouter([
     {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/chefs/:id',
-                element: <ChefsRecipe></ChefsRecipe>,
+                element: <PrivetRout><ChefsRecipe></ChefsRecipe></PrivetRout>,
                 loader: ({params})=>fetch(`https://assignment-10-server-tanzil2001.vercel.app/chefs/${params.id}`)
             }
         ]

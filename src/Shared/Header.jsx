@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
+import { FaUser } from "react-icons/fa";
 
 const Header = () => {
     const { user, LogOut } = useContext(AuthContext);
@@ -27,7 +28,7 @@ const Header = () => {
                 </div>
                 <div className='flex gap-3 items-center'>
                     {
-                        user ? <><p>{user.name}</p>
+                        user ? <><p><FaUser></FaUser></p>
                             <Link><button onClick={handleLogOut} className='btn btn-primary'>Log Out</button></Link></> : <>
                             <Link to="/login"><button className='btn btn-primary'>Log In</button></Link></>
                     }
