@@ -1,14 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../Providers/AuthProvider';
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
     return (
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, sit suscipit. Placeat veritatis cupiditate eaque, aliquam in, modi facere soluta amet ducimus quos accusantium vero voluptas velit repellat debitis optio!</p>
+        <>
+            <div className='flex justify-between items-center  container mx-auto px-5'>
+                <div>
+                    <p>Italian Foodies Recipe</p>
+                </div>
 
-            <Link to="/">Home</Link>
-            <Link to="/blog">Blog</Link>
-        </div>
+                <div>
+                    <Link to="/">Home</Link>
+                    <Link to="/blog">Blog</Link>
+                </div>
+                <div className='flex gap-3 items-center'>
+                    {
+                        user ? <><p>{user.name}</p>
+                            <Link><button className='btn btn-primary'>Log Out</button></Link></> : <>
+                            <Link to="/login"><button className='btn btn-primary'>Log In</button></Link></>
+                    }
+                </div>
+
+            </div>
+        </>
     );
 };
 
