@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../Providers/AuthProvider';
 import { FaUser } from "react-icons/fa";
 
 const Header = () => {
     const { user, LogOut } = useContext(AuthContext);
 
-    const handleLogOut =()=>{
+    const handleLogOut = () => {
         LogOut()
-        .then(result =>{
+            .then(result => {
 
-        })
-        .catch(error=>{
-            console.log(error);
-        })
+            })
+            .catch(error => {
+                console.log(error);
+            })
     }
     return (
         <>
@@ -23,8 +23,8 @@ const Header = () => {
                 </div>
 
                 <div>
-                    <Link to="/">Home</Link>
-                    <Link to="/blog">Blog</Link>
+                    <NavLink to='/' className={({ isActive }) => isActive ? 'btn btn-ghost bg-blue-700 text-black normal-case text-xl' : 'btn btn-ghost text-black normal-case text-xl'}>Home</NavLink>
+                    <NavLink to='/blog' className={({isActive})=> isActive ? 'btn btn-ghost bg-blue-700 text-black normal-case text-xl': 'btn btn-ghost text-black normal-case text-xl'}>Blog</NavLink>
                 </div>
                 <div className='flex gap-3 items-center'>
                     {
