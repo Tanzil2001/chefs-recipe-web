@@ -7,7 +7,7 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
 
-    const { signIn } = useContext(AuthContext);
+    const { signIn, googleSignIn , githubSignIn } = useContext(AuthContext);
 
     const handleLogin = event => {
         event.preventDefault();
@@ -25,6 +25,28 @@ const Login = () => {
         })
         .catch(error=>{
             console.error(error);
+        })
+    };
+
+    const handleGoogleSignIn = ()=>{
+        googleSignIn()
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=>{
+            console.error(error);
+        })
+    }
+
+    const handleGithubSignIn =()=>{
+        githubSignIn()
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error =>{
+            console.log(error);
         })
     }
 
@@ -56,6 +78,12 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
+                            </div>
+                            <div className="form-control mt-6">
+                                <button onClick={handleGoogleSignIn} className='btn btn-outline'>Sign-In with Google</button>
+                            </div>
+                            <div className="form-control mt-6">
+                                <button onClick={handleGithubSignIn} className='btn btn-outline'>Sign-In with Github</button>
                             </div>
                         </form>
                     </div>
