@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 
 const RecipeOnUi = ({ recipe }) => {
+    const  [disabled, setDisabled] = useState(false);
 
     const handleTost = ()=>{
+        setDisabled(true);
+        return toast('Favorite Recipe added');
 
-        
     }
     const { cooking_method, recipe_name, recipe_image, rating, ingredients } = recipe;
     return (
@@ -18,7 +20,7 @@ const RecipeOnUi = ({ recipe }) => {
                     <p>Cooking Method :{cooking_method}</p>
                     <p>Ratings :{rating}</p>
                     <div className="card-actions justify-end">
-                        <button onClick={handleTost} className="btn btn-primary">Favorite</button>
+                        <button onClick={handleTost} className={`btn btn-primary ${disabled ? 'btn-disabled': ''}`}>Favorite</button>
                     </div>
                 </div>
             </div>
