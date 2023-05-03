@@ -16,8 +16,8 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, photo, email, password);
 
-        if(password <6){
-            setError('go back')
+        if(password.length <6){
+            setError('Passwords can no be less then 6 characters')
             return
         }
 

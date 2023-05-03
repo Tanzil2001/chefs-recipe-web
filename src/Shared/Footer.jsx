@@ -3,7 +3,7 @@ import { FaCalendar, FaFacebook, FaInstagram, FaLocationArrow, FaMailBulk, FaPho
 
 const Footer = () => {
     return (
-        <div className='bg-black text-white p-10 mt-10'>
+        <div style={{ backgroundImage: `url("https://miraclestudio.design/html/deliciousa-landing/assets/images/bg/footer.jpg")`}} className=' text-white p-10 mt-10'>
             <div className='grid grid-cols-4 '>
                 <div>
                     <p className='mb-5 text-xl font-bold font-serif'> Italian Foodies Recipe</p>

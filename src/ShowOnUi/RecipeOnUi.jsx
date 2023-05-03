@@ -12,7 +12,7 @@ const RecipeOnUi = ({ recipe }) => {
     const { cooking_method, recipe_name, recipe_image, rating, ingredients } = recipe;
     return (
         <div >
-            <div className="card w-96 bg-base-100 shadow-xl mt-5">
+            <div className="card w-96 bg-base-100 shadow-xl mt-5 mx-auto">
                 <figure><img className='h-96 w-full' src={recipe_image} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">Recipe Name: {recipe_name}</h2>
