@@ -2,7 +2,7 @@ import React from 'react';
 
 const PizzaSection = () => {
     return (
-        <div className='flex justify-evenly items-center mt-5'>
+        <div className='md:flex justify-evenly items-center mt-5'>
             <img src="https://miraclestudio.design/html/deliciousa-html/assets/images/about/about7.png" alt="" />
             <div>
                 <p className='text-6xl font-serif font-bold italic'>Satitisty Your Pizza Pasta</p>

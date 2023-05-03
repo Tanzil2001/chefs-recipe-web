@@ -4,7 +4,7 @@ import { FaCalendar, FaFacebook, FaInstagram, FaLocationArrow, FaMailBulk, FaPho
 const Footer = () => {
     return (
         <div style={{ backgroundImage: `url("https://miraclestudio.design/html/deliciousa-landing/assets/images/bg/footer.jpg")`}} className=' text-white p-10 mt-10'>
-            <div className='grid grid-cols-4 '>
+            <div className='md:grid md:grid-cols-4 '>
                 <div>
                     <p className='mb-5 text-xl font-bold font-serif'> Italian Foodies Recipe</p>
                     <p>Alice's passion for cooking began at a young age and she has since honed her skills in some of the world's best kitchens. She is known for her unique flavor combinations and innovative cooking techniques.</p>

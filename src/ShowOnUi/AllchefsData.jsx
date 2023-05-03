@@ -1,12 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import LazyLoad from 'react-lazy-load';
+
 
 const AllchefsData = ({ allChefs }) => {
     const { id, chef_name, chef_picture, likes, num_recipes, years_of_experience } = allChefs;
     return (
         <div>
             <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto mt-5">
-                <figure><img className='rounded-full' src={chef_picture} alt="Shoes" /></figure>
+                <figure><LazyLoad><img src={chef_picture} alt="Shoes" /></LazyLoad></figure>
                 <div className="card-body">
                     <h2 className="card-title">{chef_name}</h2>
                     <p>Number of Recipes: {num_recipes}</p>
@@ -18,6 +20,7 @@ const AllchefsData = ({ allChefs }) => {
                 </div>
             </div>
         </div>
+
     );
 };
 
