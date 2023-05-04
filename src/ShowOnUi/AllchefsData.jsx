@@ -8,7 +8,7 @@ const AllchefsData = ({ allChefs }) => {
     return (
         <div>
             <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto mt-5">
-                <figure><LazyLoad><img src={chef_picture} alt="Shoes" /></LazyLoad></figure>
+                <figure><LazyLoad width={1024} height={300} threshold={1}><img src={chef_picture} alt="Shoes" /></LazyLoad></figure>
                 <div className="card-body">
                     <h2 className="card-title">{chef_name}</h2>
                     <p>Number of Recipes: {num_recipes}</p>
