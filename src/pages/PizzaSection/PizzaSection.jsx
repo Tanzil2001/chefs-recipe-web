@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const PizzaSection = () => {
+
+    useEffect(()=>{
+        AOS.init({duration: 2000})
+    },[])
     return (
         <div className='md:flex justify-evenly items-center mt-5'>
-            <img src="https://miraclestudio.design/html/deliciousa-html/assets/images/about/about7.png" alt="" />
+            <img data-aos="fade-right" src="https://miraclestudio.design/html/deliciousa-html/assets/images/about/about7.png" alt="" />
             <div>
                 <p className='text-6xl font-serif font-bold italic'>Satitisty Your Pizza Pasta</p>
                 <img className='animate-bounce ' src="https://miraclestudio.design/html/deliciousa-html/assets/images/element/element2.png" alt="" />
