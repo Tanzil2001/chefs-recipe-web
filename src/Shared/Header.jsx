@@ -19,7 +19,7 @@ const Header = () => {
     }
     return (
         <>
-            <div style={{ backgroundImage: `url("https://miraclestudio.design/html/deliciousa-html/assets/images/bg/food-menu-bg2.jpg")` }} className='flex justify-between items-center  container mx-auto px-5 mt-5 text-white p-5 rounded-lg'>
+            <div style={{ backgroundImage: `url("https://miraclestudio.design/html/deliciousa-html/assets/images/bg/food-menu-bg2.jpg")` }} className='flex justify-between items-center  container mx-auto px-5 mt-5 text-white p-5 rounded-lg  '>
                 <div>
                     <p className='text-xl font-serif font-bold'>Italian Foodies </p>
                 </div>
