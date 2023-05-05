@@ -7,7 +7,7 @@ const ChefsRecipe = () => {
     console.log(chefData);
     const { chef_name, chef_picture, likes, num_recipes, short_bio, years_of_experience } = chefData;
     return (
-        <div className='container mx-auto mt-5 p-5 rounded-xl bg-slate-400'>
+        <div className='container mx-auto mt-5 md:p-5 rounded-xl bg-slate-400'>
             <div className="card lg:card-side bg-base-100 shadow-xl">
                 <figure><img src={chef_picture} alt="Album" /></figure>
                 <div className="card-body">
@@ -19,7 +19,7 @@ const ChefsRecipe = () => {
 
                 </div>
             </div>
-            <div className=' grid grid-cols-3 gap-5 '>
+            <div className=' md:grid md:grid-cols-3 gap-5 '>
                 {
                     chefData.recipes.map((recipe, index) => <RecipeOnUi
                         key={index}

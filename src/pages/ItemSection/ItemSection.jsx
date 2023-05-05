@@ -4,20 +4,7 @@ const ItemSection = () => {
     return (
         <div  className=' p-20 mt-10 rounded-xl bg-slate-800'>
             <p className='text-center font-bold font-serif text-6xl italic text-white'>Our Delicious <br /> Menu</p>
-            <div className="w-64 carousel rounded-box mx-auto mt-10">
-                <div className="carousel-item w-full">
-                    <img src="https://miraclestudio.design/html/deliciousa-html/assets/images/foodmenu/menu6/food1.jpg" className="w-full" alt="Tailwind CSS Carousel component" />
-                </div>
-                <div className="carousel-item w-full">
-                    <img src="https://miraclestudio.design/html/deliciousa-html/assets/images/foodmenu/menu6/food2.jpg" className="w-full" alt="Tailwind CSS Carousel component" />
-                </div>
-                <div className="carousel-item w-full">
-                    <img src="https://miraclestudio.design/html/deliciousa-html/assets/images/foodmenu/menu6/food3.jpg" className="w-full" alt="Tailwind CSS Carousel component" />
-                </div>
-                <div className="carousel-item w-full">
-                    <img src="https://miraclestudio.design/html/deliciousa-html/assets/images/foodmenu/menu6/food4.jpg" className="w-full" alt="Tailwind CSS Carousel component" />
-                </div>
-            </div>
+            
             <div className=' md:flex items-center justify-center gap-10 mt-16 '>
                 <div className='relative'>
                     <img className='rounded-full ' src="https://miraclestudio.design/html/deliciousa-html/assets/images/foodmenu/menu6/food1.jpg" alt="" />
